@@ -134,3 +134,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+# md
+IMPLEMENTATION_COMPLETE.md
+PROJECT_STATUS.md
+SESSION_COMPLETE.md
