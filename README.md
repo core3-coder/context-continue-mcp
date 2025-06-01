@@ -1,5 +1,13 @@
 # Context Continuation MCP Server
 
+[![CI](https://github.com/core3-coder/context-continue-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/core3-coder/context-continue-mcp/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/core3-coder/context-continue-mcp/branch/main/graph/badge.svg)](https://codecov.io/gh/core3-coder/context-continue-mcp)
+[![npm version](https://badge.fury.io/js/context-continue-mcp.svg)](https://badge.fury.io/js/context-continue-mcp)
+[![Node.js](https://img.shields.io/node/v/context-continue-mcp.svg)](https://nodejs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub issues](https://img.shields.io/github/issues/core3-coder/context-continue-mcp.svg)](https://github.com/core3-coder/context-continue-mcp/issues)
+[![GitHub stars](https://img.shields.io/github/stars/core3-coder/context-continue-mcp.svg)](https://github.com/core3-coder/context-continue-mcp/stargazers)
+
 An MCP (Model Context Protocol) server that provides intelligent context management for AI development sessions. Never lose context when hitting token limits again!
 
 ## Features
@@ -81,6 +89,35 @@ your-project/
 │   │   └── decisions.md
 │   └── artifacts/
 └── your-code/
+```
+
+## Quality Assurance
+
+This project maintains high code quality through:
+
+- **🧪 Comprehensive Testing**: 43+ unit tests with 95%+ coverage
+- **🔄 Continuous Integration**: Automated testing on Node.js 18.x, 20.x, 21.x
+- **🌍 Cross-Platform**: Tested on Ubuntu, Windows, and macOS
+- **📊 Code Coverage**: Real-time coverage tracking with Codecov
+- **🏗️ Build Verification**: Automated build and CLI functionality testing
+- **📦 Package Validation**: Pre-publish testing and compatibility checks
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run specific test suites
+npm test token-counter
+npm test session-tracker
+npm test context-manager
+
+# Watch mode for development
+npm run test:watch
 ```
 
 ## Development
