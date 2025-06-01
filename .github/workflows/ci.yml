@@ -27,8 +27,11 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
+    - name: Run type checking
+      run: npm run type-check
+      
     - name: Run linting
-      run: npm run lint --if-present
+      run: npm run lint
       
     - name: Build project
       run: npm run build
@@ -36,7 +39,8 @@ jobs:
     - name: Run tests
       run: npm test
       
-    - name: Run tests with coverage
+    - name: Generate coverage report
+      if: matrix.node-version == '20.x'
       run: npm run test:coverage
       
     - name: Upload coverage reports to Codecov
@@ -71,18 +75,18 @@ jobs:
       
     - name: Test CLI functionality
       run: |
-        chmod +x dist/cli.js
         node dist/cli.js --help
         
     - name: Test project initialization
       run: |
         mkdir -p /tmp/test-project
         node dist/cli.js init /tmp/test-project --name "CI Test Project"
-        ls -la /tmp/test-project/.context/
+        test -f /tmp/test-project/.context/config.json
+        echo "✓ Config file created successfully"
         
     - name: Verify package can be packed
       run: npm pack
-      
+
   compatibility-test:
     runs-on: ${{ matrix.os }}
     
@@ -90,7 +94,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         node-version: [18.x, 20.x]
-    
+        
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -107,5 +111,5 @@ jobs:
     - name: Build project
       run: npm run build
       
-    - name: Run core tests (TokenCounter only for speed)
+    - name: Run core tests (fast subset)
       run: npm test token-counter
