@@ -1,0 +1,31 @@
+# .github/workflows/ci-simple.yml - Backup simple workflow
+name: CI-Simple
+
+on:
+  workflow_dispatch:  # Manual trigger for testing
+
+jobs:
+  quick-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
+      run: npm run build
+      
+    - name: Run tests
+      run: npm test
+      
+    - name: Test CLI
+      run: node dist/cli.js --help
