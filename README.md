@@ -1,5 +1,11 @@
 # Context Continuation MCP Server
 
+An MCP (Model Context Protocol) server that provides intelligent context management for AI development sessions. Never lose context when hitting token limits again!
+
+<a href="https://glama.ai/mcp/servers/@core3-coder/context-continue-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@core3-coder/context-continue-mcp/badge" alt="Context Continuation Server MCP server" />
+</a>
+
 [![CI](https://github.com/core3-coder/context-continue-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/core3-coder/context-continue-mcp/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/core3-coder/context-continue-mcp/branch/main/graph/badge.svg)](https://codecov.io/gh/core3-coder/context-continue-mcp)
 [![npm version](https://badge.fury.io/js/context-continue-mcp.svg)](https://badge.fury.io/js/context-continue-mcp)
@@ -7,8 +13,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub issues](https://img.shields.io/github/issues/core3-coder/context-continue-mcp.svg)](https://github.com/core3-coder/context-continue-mcp/issues)
 [![GitHub stars](https://img.shields.io/github/stars/core3-coder/context-continue-mcp.svg)](https://github.com/core3-coder/context-continue-mcp/stargazers)
-
-An MCP (Model Context Protocol) server that provides intelligent context management for AI development sessions. Never lose context when hitting token limits again!
 
 ## Features
 
